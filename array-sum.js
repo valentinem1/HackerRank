@@ -12,9 +12,6 @@
 // 31
 
 function simpleArraySum(ar) {
-    /*
-     * Write your code here.
-     */
     let num = 0;
 
     for(let i of ar){
@@ -25,3 +22,9 @@ function simpleArraySum(ar) {
 console.log(simpleArraySum([1, 2, 3], 6));
 console.log(simpleArraySum([1, 3, 5, 2, 2], 13));
 console.log(simpleArraySum([], 0));
+
+// with reduce method
+
+// function simpleArraySum(ar) {
+//     return ar.reduce((a, b) => a + b, 0);
+// }
