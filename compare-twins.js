@@ -10,6 +10,7 @@
 
 // Given a and b, determine their respective comparison points.
 
+////// SUDO CODE //////
 // create an empty array to hold results points
 // iterate over on array
 // compare each element with the second array elements

@@ -12,6 +12,7 @@
 // Sample Output
 // 15
 
+////// SUDO CODE //////
 // get length of matrix
 // create variables to hold diagonals sum
 // iterate over main array

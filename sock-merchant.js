@@ -23,7 +23,7 @@
 // sample output
 // 3
 
-// SUDO CODE
+////// SUDO CODE //////
 // create a variable count to hold the number of pairs
 // iterate over the array and create a hashMap
 // iterate over hashMap and check for numbers >= 2
