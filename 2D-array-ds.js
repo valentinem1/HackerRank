@@ -38,7 +38,7 @@
 // create a count variable holding the lowest sum of hour glass
 // ex: lowest sum will be -9 * 7 = -63
 // create a first loop to iterate over array
-// create a second lopp to iterate over subarrays
+// create a second loop to iterate over subarrays
 // add up each element from subarrays for a length of 3 * 3
 // create a variable sum to hold total of the add elements
 // check if the total of sum is bigger than the count variable assign count to sum
