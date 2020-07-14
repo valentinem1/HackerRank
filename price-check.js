@@ -18,24 +18,41 @@
 
 
 ///// PSEUDO CODE /////
+///// BRUT FORCE /////
 // iterate over products array
 // iterate over productSold array
 // compare ith product with ith productSold to see if they are equal
 // also compare ith productPrices with ith soldPrice to see if they aren't equal
 // if product is equal and price isn't count the error
 
+///// FASTER //////
+// iterate over products array and create a hashmap with key = product name & value = product price
+// iterate over productSold array and compare each soldPrice with each value from the hashmap keys
+// if price aren't equal increment count
+
 function priceCheck(products, productPrices, productSold, soldPrice) {
     let count = 0;
+    let hashMap = {};
 
-    for(let i = 0; i <= products.length-1; i++){
-        for(let j = 0; j <= productSold.length-1; j++){
-        if(products[i] === productSold[j] && productPrices[i] !== soldPrice[j]){
+    for(let i=0; i <= products.length-1;i++){
+        hashMap[products[i]] = productPrices[i];
+    };
+
+    // for(let i = 0; i <= products.length-1; i++){
+    //     for(let j = 0; j <= productSold.length-1; j++){
+    //     if(products[i] === productSold[j] && productPrices[i] !== soldPrice[j]){
+    //         count++;
+    //     }
+    //     }
+    // }
+
+    for(let j = 0; j <= productSold.length-1; j++){
+        if(hashMap[productSold[j]] !== soldPrice[j]){
             count++;
-        }
         }
     }
     return count;
 };
-console.log(priceCheck(['chocolate', 'cheese', 'tomato'], [15.00, 300.90, 23.44], ['chocolate', 'cheese', 'tomato'], [15, 300.90, 10.00]), 1);
+console.log(priceCheck(['chocolate', 'cheese', 'tomato'], [15.00, 300.90, 23.44], ['chocolate', 'cheese', 'tomato'], [15, 300.90, 10.00]));
 console.log(priceCheck(['chocolate', 'cheese', 'tomato'], [15.00, 300.90, 23.44], ['chocolate', 'cheese', 'tomato', 'cheese'], [15, 300.90, 10.00, 23.44]), 2);
 console.log(priceCheck(['chocolate', 'cheese', 'tomato', 'cake'], [15.00, 300.90, 23.44, 30], ['chocolate', 'cheese', 'tomato', 'cheese'], [15, 300.90, 10.00, 23.44]), 2);
