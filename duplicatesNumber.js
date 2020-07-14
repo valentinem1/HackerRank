@@ -42,7 +42,7 @@ function duplicatesNumber(name, height, weight) {
         // }
 
     for(let i = 0; i <= name.length-1; i++){
-        hashMap[name[i] + height[i] + weight[i]] = hashMap[name[i] + height[i] + weight[i]] + 1 || 1
+        hashMap[name[i]+'-'+ height[i] +'-'+ weight[i]] = hashMap[name[i] +'-'+ height[i] +'-'+ weight[i]] + 1 || 1
     }
     
     for(let el in hashMap){
