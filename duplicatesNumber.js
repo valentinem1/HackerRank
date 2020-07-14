@@ -30,19 +30,19 @@
 // if true add the value to the count -1.
 // why -1? the hashMap will count every repeated keys if they appear 2 times it is actually duplicated only 1 time. 
 
-function numDuplicates(name, price, weight) {
+function duplicatesNumber(name, height, weight) {
     let hashMap = {};
     let count = 0;
 
     // As the problem statement doesn't mention having arrays of the same length I decided to comment this out.
     // It will work with both as if commented out if a duplicate occurs it will be counted
     // If uncommented it will return 0 if the arrays length aren't the same
-        // if(name.length !== price.length || name.length !== weight.length){
+        // if(name.length !== height.length || name.length !== weight.length){
         //     return 0;
         // }
 
     for(let i = 0; i <= name.length-1; i++){
-        hashMap[name[i] + price[i] + weight[i]] = hashMap[name[i] + price[i] + weight[i]] + 1 || 1
+        hashMap[name[i] + height[i] + weight[i]] = hashMap[name[i] + height[i] + weight[i]] + 1 || 1
     }
     
     for(let el in hashMap){
@@ -52,6 +52,7 @@ function numDuplicates(name, price, weight) {
     }
     return count;
 }
-console.log(numDuplicates(['ball', 'ball', 'ball', 'ball', 'box', 'box', 'box'], [2, 2, 2, 2, 2, 3, 3], [1, 1, 1, 1, 3, 2, 2]));
-console.log(numDuplicates(['ball', 'ball', 'box', 'box', 'bed', 'couch', 'bed', 'car'], [2, 3, 2, 2, 200, 543, 200, 10000], [1, 1, 2, 3, 100, 150, 100, 5000 ]));
-console.log(numDuplicates(['ball', 'ball', 'box'], [1, 1], [2, 2]))
+
+console.log(duplicatesNumber(['ball', 'ball', 'ball', 'ball', 'box', 'box', 'box'], [2, 2, 2, 2, 2, 3, 3], [1, 1, 1, 1, 3, 2, 2]));
+console.log(duplicatesNumber(['ball', 'ball', 'box', 'box', 'bed', 'couch', 'bed', 'car'], [2, 3, 2, 2, 200, 543, 200, 10000], [1, 1, 2, 3, 100, 150, 100, 5000 ]));
+console.log(duplicatesNumber(['ball', 'ball', 'box'], [1, 1], [2, 2]))
